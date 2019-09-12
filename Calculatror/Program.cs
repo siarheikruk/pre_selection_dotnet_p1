@@ -51,23 +51,17 @@ namespace Calculatror
                     break;
             }
         }
-        
+
         /// <summary>
         /// Читает введенный оператор
         /// </summary>
         /// <returns>Возвращает оператор</returns>
-        private static char ReadOperator()
-        {
-            return Convert.ToChar(Console.ReadLine());
-        }
+        private static char ReadOperator() => Convert.ToChar(value: Console.ReadLine());
 
         /// <summary>
         /// Читает введенное целое число
         /// </summary>
         /// <returns>Возвращает целое число</returns>
-        private static long ReadLine()
-        {
-            return Convert.ToInt64(Console.ReadLine());
-        }
+        private static long ReadLine() => Convert.ToInt64(Console.ReadLine());
     }
 }
