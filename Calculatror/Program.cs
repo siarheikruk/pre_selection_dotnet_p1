@@ -6,19 +6,32 @@ namespace Calculatror
     {
         public static void Main(string[] args)
         {
-            double a, b;
+            long a, b;
             char z;
 
-            Console.WriteLine("Введите a ");
-            a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите целое число");
+            a = ReadLine();
 
-            Console.WriteLine("Введите действие (+, -, *, /) ");
-            z = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Введите оператор (+, -, *, /) ");
+            z = ReadOperator();
 
-            Console.WriteLine("Введите b ");
-            b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите второе целое число");
+            b = ReadLine();
 
+            Calculate(a, b, z);
 
+            Console.ReadLine();
+
+        }
+
+        /// <summary>
+        /// Производит калькуляции с двумя целыми числами
+        /// </summary>
+        /// <param name="a">Первое число</param>
+        /// <param name="b">Второе число</param>
+        /// <param name="z">Оператор</param>
+        private static void Calculate(long a, long b, char z)
+        {
             switch (z)
             {
                 case '+':
@@ -34,11 +47,27 @@ namespace Calculatror
                     Console.WriteLine("{0}/{1}={2}", a, b, a / b);
                     break;
                 default:
-                    Console.WriteLine("Ошибка");
+                    Console.WriteLine("Что-то пошло не так...");
                     break;
             }
+        }
+        
+        /// <summary>
+        /// Читает введенный оператор
+        /// </summary>
+        /// <returns>Возвращает оператор</returns>
+        private static char ReadOperator()
+        {
+            return Convert.ToChar(Console.ReadLine());
+        }
 
-            Console.ReadLine();
+        /// <summary>
+        /// Читает введенное целое число
+        /// </summary>
+        /// <returns>Возвращает целое число</returns>
+        private static long ReadLine()
+        {
+            return Convert.ToInt64(Console.ReadLine());
         }
     }
 }
